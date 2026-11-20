@@ -1,0 +1,586 @@
+/*
+ * TastyTreat Dessert Website Stylesheet
+ *
+ * This stylesheet defines the visual language for the TastyTreat website.
+ * It uses a warm and inviting colour palette inspired by rich chocolates
+ * and soft pastries. Layouts are responsive, adapting gracefully across
+ * different screen sizes. Animations and transitions are applied to
+ * interactive elements such as navigation toggles and dessert cards to
+ * provide a smooth, polished user experience.
+ */
+
+:root {
+  /* Colour palette */
+  --primary-color: #a63b20;    /* warm cinnamon */
+  --secondary-color: #fff4ef;  /* delicate cream */
+  --accent-color: #85251e;     /* deep berry red */
+  --neutral-dark: #333333;     /* dark text */
+  --neutral-light: #ffffff;    /* light backgrounds */
+  --bg-color: #fff8f5;         /* page background */
+  --transition: all 0.3s ease-in-out;
+}
+
+/* Global resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--neutral-dark);
+  background-color: var(--bg-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navigation */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--neutral-light);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.brand a {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.brand span {
+  color: var(--accent-color);
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--neutral-dark);
+  transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary-color);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  width: 25px;
+  height: 2px;
+  background-color: var(--neutral-dark);
+  display: block;
+  position: relative;
+  transition: var(--transition);
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  top: 8px;
+}
+
+/* Toggle animation */
+.nav-toggle.open .hamburger {
+  background-color: transparent;
+}
+
+.nav-toggle.open .hamburger::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.nav-toggle.open .hamburger::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  height: 80vh;
+  width: 100%;
+  background-image: url('assets/images/fruit_tart.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--neutral-light);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  padding: 0 1rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  background-color: var(--primary-color);
+  color: var(--neutral-light);
+  border-radius: 30px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background-color: var(--accent-color);
+}
+
+/* Sections */
+section {
+  padding: 4rem 2rem;
+}
+
+/* Desserts grid */
+.desserts {
+  background-color: var(--secondary-color);
+  text-align: center;
+}
+
+.desserts h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+.dessert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.dessert-card {
+  background-color: var(--neutral-light);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.dessert-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1rem;
+  flex: 1;
+}
+
+.dessert-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--neutral-dark);
+  font-size: 1.3rem;
+}
+
+.dessert-card p {
+  font-size: 0.9rem;
+  color: #666666;
+}
+
+.dessert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Membership plans */
+.membership {
+  background-color: var(--bg-color);
+  text-align: center;
+}
+
+.membership h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  color: #666666;
+}
+
+.membership-plans {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.plan-card {
+  background-color: var(--neutral-light);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  width: 100%;
+  transition: var(--transition);
+  position: relative;
+}
+
+.plan-card.highlighted {
+  border: 3px solid var(--accent-color);
+}
+
+.plan-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.plan-card .price {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.plan-card ul {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.plan-card ul li {
+  margin-bottom: 0.5rem;
+  color: #555555;
+  font-size: 0.95rem;
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 30px;
+  color: var(--primary-color);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: var(--neutral-light);
+}
+
+/* Contact section */
+.contact {
+  background-color: var(--secondary-color);
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555555;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+  background-color: var(--neutral-dark);
+  color: var(--neutral-light);
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+/* Detail pages */
+.detail-hero {
+  margin-top: 70px;
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: var(--neutral-light);
+  text-align: center;
+}
+
+.detail-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.detail-hero h1 {
+  position: relative;
+  font-size: 3rem;
+  z-index: 1;
+}
+
+.detail-content {
+  max-width: 900px;
+  margin: -5rem auto 3rem auto;
+  background-color: var(--neutral-light);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.detail-content h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.detail-content p,
+.detail-content ul {
+  color: #555555;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.detail-content ul {
+  list-style: disc inside;
+  padding-left: 1rem;
+}
+
+.order-btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  background-color: var(--primary-color);
+  color: var(--neutral-light);
+  border-radius: 30px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.order-btn:hover {
+  background-color: var(--accent-color);
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: var(--primary-color);
+  text-decoration: underline;
+  transition: var(--transition);
+}
+
+.back-link:hover {
+  color: var(--accent-color);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--neutral-light);
+    flex-direction: column;
+    align-items: flex-start;
+    width: 220px;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateX(110%);
+    transition: transform 0.3s ease-in-out;
+  }
+  .nav-menu.open {
+    transform: translateX(0);
+  }
+  .nav-menu li {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .nav-link {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .detail-hero h1 {
+    font-size: 2.5rem;
+  }
+}
+/* Usability, accessibility and small-screen fixes */
+html { scroll-behavior: smooth; }
+body { padding-top: 76px; overflow-x: hidden; }
+.navbar { min-height: 76px; }
+.nav-menu { align-items: center; }
+.nav-toggle { padding: 12px; min-width: 44px; min-height: 44px; }
+.skip-link {
+  position: fixed; top: -80px; left: 12px; z-index: 2000;
+  padding: 10px 16px; border-radius: 6px; color: #fff;
+  background: var(--accent-color);
+}
+.skip-link:focus { top: 12px; }
+:where(a, button, input, textarea):focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
+button { font: inherit; cursor: pointer; }
+section, main { scroll-margin-top: 90px; }
+.hero { height: auto; min-height: min(75vh, 680px); }
+.hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+.dessert-grid { max-width: 1200px; margin: 0 auto; }
+.dessert-card { width: 100%; min-width: 0; }
+.dessert-card:focus-visible { transform: translateY(-3px); }
+.detail-hero { margin-top: 0; height: clamp(280px, 50vh, 560px); padding: 2rem; }
+.detail-hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+.detail-content { position: relative; z-index: 1; width: calc(100% - 2rem); }
+.detail-content .order-btn { margin-right: 1rem; }
+.allergen-note { margin-top: 1.5rem; font-size: 0.9rem; }
+.form-notice, .enquiry-context {
+  max-width: 600px; margin: 0 auto 1.5rem;
+  line-height: 1.6; text-align: left;
+}
+.form-notice { font-size: 0.9rem; }
+.enquiry-context { font-weight: 600; color: var(--accent-color); }
+.form-status { min-height: 1.5em; margin-top: 1rem; font-weight: 600; }
+.contact-form .btn { border: 0; }
+.btn, .btn-secondary, .order-btn { text-align: center; }
+@media (max-width: 768px) {
+  .navbar { padding: 0.75rem 1rem; }
+  .brand a { font-size: 1.55rem; }
+  .nav-menu {
+    width: min(300px, calc(100vw - 1rem));
+    max-height: calc(100dvh - 76px); overflow-y: auto;
+    visibility: hidden; opacity: 0; pointer-events: none;
+    transform: translateX(calc(100% + 16px));
+    transition: transform .25s ease, opacity .25s ease, visibility .25s ease;
+    align-items: stretch;
+  }
+  .nav-menu.open {
+    visibility: visible; opacity: 1; pointer-events: auto;
+    transform: translateX(0);
+  }
+  .nav-menu li { margin-bottom: 0; }
+  .hero { min-height: 520px; }
+  section { padding: 3rem 1rem; }
+  .detail-hero { height: 340px; }
+  .detail-content { margin-top: -2.5rem; padding: 1.5rem; }
+  .detail-content h2 { font-size: 1.55rem; }
+  .membership-plans { gap: 1rem; }
+  .plan-card { max-width: 420px; }
+}
+@media (max-width: 420px) {
+  .hero { min-height: 430px; }
+  .hero h1 { font-size: 2rem; }
+  .dessert-grid { grid-template-columns: minmax(0, 1fr); }
+  .detail-content .order-btn { margin-right: 0; width: 100%; }
+  .back-link { display: block; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
+/* Complete enquiry remains accessible when browser clipboard permission is denied. */
+.manual-enquiry { max-width: 600px; margin-top: 1rem; text-align: left; }
+.manual-enquiry label { display: block; font-weight: 600; margin-bottom: .5rem; }
+.manual-enquiry textarea {
+  box-sizing: border-box; width: 100%; resize: vertical; background: #fff;
+  border: 2px solid var(--primary-color); border-radius: 6px;
+  padding: .85rem; font: inherit; color: var(--neutral-dark);
+}

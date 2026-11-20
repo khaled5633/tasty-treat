@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore the TastyTreat dessert menu, learn about five popular desserts and prepare an enquiry." />
+    <title>TastyTreat | Home</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Script -->
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <!-- Navigation -->
+    <nav class="navbar" aria-label="Main navigation">
+      <div class="brand">
+        <a href="index.html">Tasty<span>Treat</span></a>
+      </div>
+      <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-menu" id="primary-navigation">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="#desserts" class="nav-link">Desserts</a></li>
+        <li><a href="#membership" class="nav-link">Membership</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Indulge in Sweet Moments</h1>
+        <p>Explore our delightful range of homemade desserts</p>
+        <a href="#desserts" class="btn">Browse Desserts</a>
+      </div>
+    </section>
+
+    <!-- Desserts Section -->
+    <section id="desserts" class="desserts">
+      <h2>Our Desserts</h2>
+      <div class="dessert-grid">
+        <a href="chocolate_cake.html" class="dessert-card">
+          <img src="assets/images/chocolate_cake.jpg" alt="Chocolate cake with chocolate topping" loading="lazy" decoding="async" />
+          <div class="card-content">
+            <h3>Chocolate Cake</h3>
+            <p>Rich &amp; moist chocolate indulgence</p>
+          </div>
+        </a>
+        <a href="strawberry_cheesecake.html" class="dessert-card">
+          <img
+            src="assets/images/strawberry_cheesecake_f.jpg"
+            alt="Strawberry cheesecake topped with strawberries" loading="lazy" decoding="async"
+          />
+          <div class="card-content">
+            <h3>Strawberry Cheesecake</h3>
+            <p>Creamy cheesecake topped with fresh strawberries</p>
+          </div>
+        </a>
+        <a href="icecream.html" class="dessert-card">
+          <img src="assets/images/strawberry_icecream.jpg" alt="Strawberry ice cream" loading="lazy" decoding="async" />
+          <div class="card-content">
+            <h3>Strawberry Ice Cream</h3>
+            <p>Refreshing ice cream with succulent strawberries</p>
+          </div>
+        </a>
+        <a href="brownie.html" class="dessert-card">
+          <img src="assets/images/brownie_f.jpg" alt="Chocolate brownies" loading="lazy" decoding="async" />
+          <div class="card-content">
+            <h3>Chocolate Brownies</h3>
+            <p>Fudgy brownies with a crispy top</p>
+          </div>
+        </a>
+        <a href="fruit_tart.html" class="dessert-card">
+          <img src="assets/images/fruit_tart.jpg" alt="Fruit tart with assorted fresh fruit" loading="lazy" decoding="async" />
+          <div class="card-content">
+            <h3>Fruit Tart</h3>
+            <p>Assortment of fresh fruits atop a buttery crust</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Membership Section -->
+    <section id="membership" class="membership">
+      <h2>Membership Plans (Preview)</h2>
+      <p class="section-subtitle">These plans are illustrative and not yet available to purchase. Enquire to learn more.</p>
+      <div class="membership-plans">
+        <div class="plan-card">
+          <h3>Basic</h3>
+          <p class="price">£4.99/month</p>
+          <ul>
+            <li>Access to view desserts</li>
+            <li>Single device login</li>
+            <li>No downloads</li>
+          </ul>
+          <a href="?plan=Basic#contact" class="btn-secondary">Enquire About Plan</a>
+        </div>
+        <div class="plan-card highlighted">
+          <h3>Premium</h3>
+          <p class="price">£7.99/month</p>
+          <ul>
+            <li>All benefits of Basic</li>
+            <li>Download dessert recipes</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="?plan=Premium#contact" class="btn-secondary">Enquire About Plan</a>
+        </div>
+        <div class="plan-card">
+          <h3>Deluxe</h3>
+          <p class="price">£9.99/month</p>
+          <ul>
+            <li>All benefits of Premium</li>
+            <li>Access on three devices</li>
+            <li>Monthly surprise dessert box</li>
+          </ul>
+          <a href="?plan=Deluxe#contact" class="btn-secondary">Enquire About Plan</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <p class="section-subtitle">Have questions or special requests? Prepare an enquiry below.</p>
+      <p class="form-notice">This is a static website demo. No message is sent and no payment is taken. Copy your enquiry and send it through your preferred contact method.</p>
+      <p class="enquiry-context" id="enquiry-context" hidden></p>
+      <form class="contact-form" id="enquiry-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" autocomplete="name" maxlength="120" required placeholder="Your name" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" maxlength="254" required placeholder="Your email" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            maxlength="5000"
+            rows="5"
+            required
+            placeholder="Your message"
+          ></textarea>
+        </div>
+        <button type="submit" class="btn">Copy Enquiry</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        <div class="manual-enquiry" id="manual-enquiry" hidden>
+          <label for="manual-enquiry-text">Copy your complete enquiry from this box:</label>
+          <textarea id="manual-enquiry-text" rows="8" readonly></textarea>
+        </div>
+      </form>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <p>&copy; <span data-current-year>2026</span> TastyTreat. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
